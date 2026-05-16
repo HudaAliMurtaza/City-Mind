@@ -10,15 +10,6 @@ a medical team navigates to trapped civilians in real time.
 
 ---
 
-## Team
-
-| Member | ID | Challenge |
-|---|---|---|
-| Murtaza Mustafa | 24i-0876 | Challenge 1 — City Layout Planning (CSP) |
-| Hadiya Sajjad | 24i-0552 | Challenge 3 — Ambulance Placement (SA) · Challenge 4 — Emergency Routing (A\*) |
-| Huda Ali | 24i-0701 | Challenge 5 — Crime Risk Prediction (K-Means + KNN) |
-
----
 
 ## Requirements
 
@@ -224,25 +215,3 @@ Each step:
 
 ---
 
-## Live Modification Guide (Phase 3 Viva)
-
-All constraint parameters are in one place. To change any rule during the viva:
-
-```python
-# challenge1csp.py — top of file
-CONSTRAINTS = {
-    "C1_EXCLUSION_RADIUS": 1,   # change to 2 for full buffer zone
-    "C2_HOSPITAL_HOPS":    3,   # change to 4 for wider coverage
-    "C3_INDUSTRIAL_HOPS":  2,   # change to 3 for stricter power plant rule
-    "HOSPITAL_SEED_INSET": 1,
-}
-```
-
-Change a value, press `R` in the UI to reset — the new constraint takes effect
-immediately with no other code changes needed.
-
-To change the number of ambulances: edit `AmbulanceSA.NUM_AMBULANCES` in
-`challenge3ambulance.py`.
-
-To change the strike limit before a civilian is deferred: edit
-`EmergencyRouter.NO_PATH_STRIKE_LIMIT` in `challenge4emergencyroute.py`.
